@@ -76,18 +76,18 @@ ensure_mise() {
 # Function to install the AWS CLI for the correct architecture
 # Downloads and installs the AWS CLI package for arm64 or x86_64
 # Official AWS CLI: https://aws.amazon.com/cli/
-install_awscli() {
-  log "Installing AWS"
-  curl -o "/tmp/awscliv2.pkg" "https://awscli.amazonaws.com/AWSCLIV2.pkg"
-  sudo installer -pkg "/tmp/awscliv2.pkg" -target /
-  rm -f "/tmp/awscliv2.pkg"
+#install_awscli() {
+# log "Installing AWS"
+# curl -o "/tmp/awscliv2.pkg" "https://awscli.amazonaws.com/AWSCLIV2.pkg"
+#  sudo installer -pkg "/tmp/awscliv2.pkg" -target /
+#  rm -f "/tmp/awscliv2.pkg"
 
-  if ! have aws; then
-    die "AWS CLI installation failed."
-  fi
+#  if ! have aws; then
+#   die "AWS CLI installation failed."
+#  fi
 
-  log "AWS CLI installed: $(aws --version)"
-}
+# log "AWS CLI installed: $(aws --version)"
+#}
 
 # Function to verify tools listed in mise.toml
 # Reads tools from mise.toml and checks their versions
