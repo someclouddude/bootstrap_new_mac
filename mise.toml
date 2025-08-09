@@ -1,0 +1,9 @@
+# Tool versions for this project
+# Managed by mise (https://mise.jdx.dev)
+
+[tools]
+python = "3.12"
+opentofu = "1.10"
+terraform = "1.12"
+kubectl = "latest"
+helm = "latest"
