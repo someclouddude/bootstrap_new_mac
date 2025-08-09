@@ -73,24 +73,6 @@ ensure_mise() {
   eval "$(mise activate zsh)"
 }
 
-# Function to install the AWS CLI for the correct architecture
-# Downloads and installs the AWS CLI package for arm64 or x86_64
-# Official AWS CLI: https://aws.amazon.com/cli/
-#install_awscli() {
-# log "Installing AWS"
-# curl -o "/tmp/awscliv2.pkg" "https://awscli.amazonaws.com/AWSCLIV2.pkg"
-#  sudo installer -pkg "/tmp/awscliv2.pkg" -target /
-#  rm -f "/tmp/awscliv2.pkg"
-
-#  if ! have aws; then
-#   die "AWS CLI installation failed."
-#  fi
-
-# log "AWS CLI installed: $(aws --version)"
-#}
-
-# Function to verify tools listed in mise.toml
-# Reads tools from mise.toml and checks their versions
 verify_mise() {
   log "Verifying tools listed in mise.toml…"
 
@@ -118,7 +100,7 @@ trust_project_config() {
   if [[ -f "mise.toml" || -f ".tool-versions" ]]; then
     log "Project config detected; trusting and installing…"
     mise trust -y || true
-    mise install --yes || true
+    mise install --yes -g || true
   else
     die "No mise.toml or .tool-versions found. Please add one to the project."
   fi
