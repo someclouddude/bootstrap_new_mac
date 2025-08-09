@@ -77,15 +77,9 @@ ensure_mise() {
 # Downloads and installs the AWS CLI package for arm64 or x86_64
 # Official AWS CLI: https://aws.amazon.com/cli/
 install_awscli() {
-  local arch
-  arch="$(uname -m)"
-  log "Installing AWS CLI for architecture: $arch"
+  log "Installing AWS"
 
-  if [[ "$arch" == "arm64" ]]; then
-    curl -o "/tmp/awscliv2.pkg" "https://awscli.amazonaws.com/AWSCLIV2-arm64.pkg"
-  else
-    curl -o "/tmp/awscliv2.pkg" "https://awscli.amazonaws.com/AWSCLIV2.pkg"
-  fi
+  curl -o "/tmp/awscliv2.pkg" "https://awscli.amazonaws.com/AWSCLIV2.pkg"
 
   sudo installer -pkg "/tmp/awscliv2.pkg" -target /
   rm -f "/tmp/awscliv2.pkg"
