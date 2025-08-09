@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # macOS bootstrap for mise and core tools
 # Installs: Homebrew (if missing), mise and tools, and AWS CLI
 
