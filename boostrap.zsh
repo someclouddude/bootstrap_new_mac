@@ -78,9 +78,7 @@ ensure_mise() {
 # Official AWS CLI: https://aws.amazon.com/cli/
 install_awscli() {
   log "Installing AWS"
-
   curl -o "/tmp/awscliv2.pkg" "https://awscli.amazonaws.com/AWSCLIV2.pkg"
-
   sudo installer -pkg "/tmp/awscliv2.pkg" -target /
   rm -f "/tmp/awscliv2.pkg"
 
