@@ -100,7 +100,7 @@ trust_project_config() {
   if [[ -f "mise.toml" || -f ".tool-versions" ]]; then
     log "Project config detected; trusting and installing…"
     mise trust -y || true
-    mise install --yes -g || true
+    mise use --yes -g || true
   else
     die "No mise.toml or .tool-versions found. Please add one to the project."
   fi
